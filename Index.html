@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kategori Usia</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin: 20px;
+    }
+    input[type="number"] {
+        padding: 8px;
+        width: 50px;
+        text-align: center;
+    }
+    button {
+        padding: 10px 20px;
+        background-color: #4CAF;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+    p {
+        margin-top: 20px;
+        font-size: 18px;
+    }
+</style>
+</head>
+<body>
+    <h2>Masukkan Usia Anda</h2>
+    <input type="number" id="usiaInput" min="0" placeholder="Usia">
+    <button onclick="kategoriUsia()">Cek Kategori</button>
+    <p id="kategori"></p>
+
+    <script>
+        function kategoriUsia() {
+    var usia = parseInt(document.getElementById('usiaInput').value);
+    var kategori = '';
+
+    if (usia < 2) {
+        kategori = 'Batita (di bawah 2 tahun)';
+    } else if (usia < 3) {
+        kategori = 'Balita (2 tahun - 2 tahun 11 bulan)';
+    } else if (usia < 5) {
+        kategori = 'Balita (3 tahun - 4 tahun 11 bulan)';
+    } else if (usia < 12) {
+        kategori = 'Anak-anak (5 tahun - 11 tahun)';
+    } else if (usia < 18) {
+        kategori = 'Remaja (12 tahun - 17 tahun)';
+    } else if (usia < 60) {
+        kategori = 'Dewasa (18 tahun - 59 tahun)';
+    } else if (usia < 75) {
+        kategori = 'Tua (60 tahun - 74 tahun)';
+    } else {
+        kategori = 'Lanjut usia (75 tahun ke atas)';
+    }
+
+    document.getElementById('kategori').innerText = `Anda termasuk dalam kategori: ${kategori}`;
+}
+    </script>
+</body>
+<footer>Copyright arya</footer>
+</html>
